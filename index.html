@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SNAC Editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Pyscript: The Python interpreter -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.03.1/pyscript.css" />
+    <script defer src="https://pyscript.net/releases/2023.03.1/pyscript.js"></script>
+
+    <!-- Codemirror: The code editor -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    </link>
+    
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js">
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js">
+    </script>
+
+    <!-- Fontawesome: The icons -->
+    <script src="https://kit.fontawesome.com/d3c059a838.js" crossorigin="anonymous"></script>
+
+    <!-- Custom assets -->
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer type="text/javascript" src="editor.js"></script>
+</head>
+<body>
+    <!-- Start PyScript -->
+    <py-config src="./pyscript.toml"></py-config>
+    <py-script src="./main.py"></py-script>
+
+    <!-- The code editor -->
+    <div id="wrapper">
+        <header>
+            <div id="menu">
+                <div id="leftMenuPane">
+                    <button py-click="run_code()" id="runCodeBtn" title="Run code">Run code</button>
+                    <a class="fa-solid fa-download" id="downloadLink" title="Download code" ></a>
+                </div>
+                <div id="rightMenuPane">
+                    <a class="fa fa-github githubLink" title="Visit project on GitHub" href="https://github.com/marieroald/snac-editor"></a>
+                </div>
+            </div>
+        </header>
+        
+        <div id="editorPane">
+            <div id="inputPane">
+                <div id="editor">
+                </div>
+            </div>
+    
+            <div id="outputPane">
+                <py-terminal></py-terminal>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
