@@ -14,7 +14,6 @@ def input(prompt):
     return out
 
 
-# Two leading underscores to be sure that these are unlikely to be used in the executed code
 def get_code():
     """Extract the content from the codemirror editor.
     """
